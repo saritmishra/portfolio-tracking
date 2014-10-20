@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- To load this page, go to the project folder and run a http server using Python
+python -m SimpleHTTPServer -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Portfolio Charts</title>
+
+  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <td>Scrip</td>
+          <td>Buy Price</td>
+          <td>Chart</td>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+
+      $.getJSON( "data.json", function( data ) {
+        var items = [];
+
+        // Example of URL - https://chart.finance.yahoo.com/z?s=HINDALCO.NS&t=1y&z=s
+        chartURLPrefix = "https://chart.finance.yahoo.com/z?s=";
+        chartURLSuffix = "&t=1y&z=s";
+
+        $.each( data, function( key, valueObject ) {
+          items.push("<tr>");
+          items.push( "<td>" + valueObject.scrip + "</td>" );
+          items.push( "<td>" + valueObject.buyPrice + "</td>" );
+          items.push( "<td><img src='" + chartURLPrefix + valueObject.scrip + chartURLSuffix +  "'></td>" );
+          items.push("</tr>");
+        });
+
+        $("table > tbody").append(items.join(""));
+
+      });
+
+    </script>
+</body>
+</html>
