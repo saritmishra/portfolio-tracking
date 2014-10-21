@@ -1,7 +1,7 @@
 <!doctype html>
 <!-- To load this page, go to the project folder and run a http server using Python
 python -m SimpleHTTPServer -->
-<html lang="en">
+<html lang="en" ng-app="portfolioCharts">
 <head>
   <meta charset="utf-8">
 
@@ -13,7 +13,7 @@ python -m SimpleHTTPServer -->
 </head>
 
 <body>
-  <div class="container">
+  <div class="container" ng-controller="mainController">
     <table class="table table-hover">
       <thead>
         <tr>
@@ -23,12 +23,16 @@ python -m SimpleHTTPServer -->
         </tr>
       </thead>
       <tbody>
-
+        <tr ng-repeat="company in model.companyList">
+          <td>{{ company.scrip }}</td>
+          <td>{{ company.buyPrice }}</td>
+          <td><img ng-src="{{ model.getChartURL(company.scrip) }}"></td>
+        </tr>
       </tbody>
     </table>
   </div>
 
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<!--     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script>
 
       $.getJSON( "data.json", function( data ) {
@@ -50,6 +54,9 @@ python -m SimpleHTTPServer -->
 
       });
 
-    </script>
+    </script> -->
+    <script type="text/javascript" src="lib/angular.js"></script>
+    <script type="text/javascript" src="scripts/controllers/mainController.js"></script>
+
 </body>
 </html>
