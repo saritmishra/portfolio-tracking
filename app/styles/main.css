@@ -7,11 +7,23 @@
   display: inline-block;
   border: 1px solid gray;
   margin: 5px;
+  position: relative;
 }
 
 .buyPrice {
   width: 95px;
   margin: 0px auto;
+  position: absolute;
+  top: 50%;
+  left: 43%;
+  color: rgb(92, 92, 92);
+}
+
+img {
+  width: 350px;
+  height: 205px;
+  margin: 0px auto;
+  display: block;
 }
 
 /*ul {
