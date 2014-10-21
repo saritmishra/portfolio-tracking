@@ -7,56 +7,29 @@ python -m SimpleHTTPServer -->
 
   <title>Portfolio Charts</title>
 
-  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 
 <body>
   <div class="container" ng-controller="mainController">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <td>Scrip</td>
-          <td>Buy Price</td>
-          <td>Chart</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="company in model.companyList">
-          <td>{{ company.scrip }}</td>
-          <td>{{ company.buyPrice }}</td>
-          <td><img ng-src="{{ model.getChartURL(company.scrip) }}"></td>
-        </tr>
-      </tbody>
-    </table>
+
+ <!--    <ul>
+      <li ng-repeat="company in model.companyList"> -->
+        <div class="tile" ng-repeat="company in model.companyList">
+          <img ng-src="{{ model.getChartURL(company.scrip) }}" alt="">
+          <h3 class="buyPrice">{{ company.buyPrice }}</h3>
+          <!-- <div class="buyPrice">{{ company.buyPrice }}</div> -->
+        </div>
+      <!-- </li>
+    </ul> -->
+
   </div>
 
-<!--     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script>
 
-      $.getJSON( "data.json", function( data ) {
-        var items = [];
 
-        // Example of URL - https://chart.finance.yahoo.com/z?s=HINDALCO.NS&t=1y&z=s
-        chartURLPrefix = "https://chart.finance.yahoo.com/z?s=";
-        chartURLSuffix = "&t=1y&z=s";
-
-        $.each( data, function( key, valueObject ) {
-          items.push("<tr>");
-          items.push( "<td>" + valueObject.scrip + "</td>" );
-          items.push( "<td>" + valueObject.buyPrice + "</td>" );
-          items.push( "<td><img src='" + chartURLPrefix + valueObject.scrip + chartURLSuffix +  "'></td>" );
-          items.push("</tr>");
-        });
-
-        $("table > tbody").append(items.join(""));
-
-      });
-
-    </script> -->
-    <script type="text/javascript" src="lib/angular.js"></script>
-    <script type="text/javascript" src="scripts/controllers/mainController.js"></script>
+  <script type="text/javascript" src="lib/angular.js"></script>
+  <script type="text/javascript" src="scripts/controllers/mainController.js"></script>
 
 </body>
 </html>
