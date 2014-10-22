@@ -27,11 +27,7 @@ img {
   display: block;
 }
 
-/*ul {
-  padding: 0px;
-  list-style-type: none;
+.timeLink{
+  font-size: 125%;
+  margin-left: 20%;
 }
-
-li {
-  display: inline-block;
-}*/

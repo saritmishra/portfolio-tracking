@@ -14,15 +14,16 @@ python -m SimpleHTTPServer -->
 <body>
   <div class="container" ng-controller="mainController">
 
- <!--    <ul>
-      <li ng-repeat="company in model.companyList"> -->
-        <div class="tile" ng-repeat="company in model.companyList">
-          <img ng-src="{{ model.getChartURL(company.scrip) }}" alt="">
-          <h3 class="buyPrice">{{ company.buyPrice }}</h3>
-          <!-- <div class="buyPrice">{{ company.buyPrice }}</div> -->
-        </div>
-      <!-- </li>
-    </ul> -->
+    <div class="tile" ng-repeat="company in model.companyList track by company.scrip">
+      <!-- <img ng-src="{{ model.getChartURL(company.scrip) }}" alt=""> -->
+      <img ng-src="{{ company.chartLink }}" alt="">
+      <div class="buyPrice">{{ company.buyPrice }}</div>
+      <div>
+        <a href="" class="timeLink" ng-click="model.updateChart(company, '5d')">5d</a>
+        <a href="" class="timeLink" ng-click="model.updateChart(company, '3m')">3m</a>
+        <a href="" class="timeLink" ng-click="model.updateChart(company, '1y')">1y</a>
+      </div>
+    </div>
 
   </div>
 
