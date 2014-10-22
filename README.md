@@ -28,5 +28,9 @@ On a Mac, you can do this simply by
 python -m SimpleHTTPServer
 ```
 
+You can now access the app at http://localhost:8080
+
+
+
 Feel free to send me your comments.
 
