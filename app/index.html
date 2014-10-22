@@ -12,9 +12,14 @@ python -m SimpleHTTPServer -->
 </head>
 
 <body>
+
+  <div class="topper">
+    <input class="form-control searchBar" type="text" placeholder="Filter on scrip or account..." ng-model="searchText" id="searchBar">
+  </div>
+
   <div class="container" ng-controller="mainController">
 
-    <div class="tile" ng-repeat="company in model.companyList track by company.scrip">
+    <div class="tile" ng-repeat="company in model.companyList | filter: searchText "> <!-- track by company.scrip -->
       <!-- <img ng-src="{{ model.getChartURL(company.scrip) }}" alt=""> -->
       <img ng-src="{{ company.chartLink }}" alt="">
       <div class="buyPrice">{{ company.buyPrice }}</div>
@@ -26,8 +31,6 @@ python -m SimpleHTTPServer -->
     </div>
 
   </div>
-
-
 
   <script type="text/javascript" src="lib/angular.js"></script>
   <script type="text/javascript" src="scripts/controllers/mainController.js"></script>

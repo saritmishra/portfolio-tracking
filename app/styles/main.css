@@ -1,6 +1,7 @@
 .container {
   width: 1250px;
 }
+
 .tile {
   width: 380px;
   min-height: 250px;
@@ -30,4 +31,16 @@ img {
 .timeLink{
   font-size: 125%;
   margin-left: 20%;
+}
+
+.searchBar {
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.topper {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
 }
