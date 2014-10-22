@@ -9,6 +9,7 @@ This app helps you see the 5 day, 3 month and 1 year stock price trend (thanks f
 
 To run the app, you will need to specify you scrips in data/data.json file
 e.g
+````JSON
 [
   {
         "scrip":"AAPL",
@@ -19,9 +20,11 @@ e.g
         "buyPrice":"500.00"
     },
 ]
+````
 
 Change directory to where index.html is located and run a HTTP Server to serve the pages.
 On a Mac, you can simply do this by
+```
 python -m SimpleHTTPServer
-
+```
 
