@@ -11,18 +11,10 @@
         var init = function(){
             $http.get("data/data.json").success(function(jsonData){
                     model.companyList = jsonData;
-
-                    // Add chart links to JSON
-                    angular.forEach(model.companyList, function(company){
-                        company.chartLink =  model.getChartURL(company.scrip, model.defaultPeriod);
-                    });
+                    // Add chart URLs to each company in the list of companies
+                    model.rebuildCharts();
              });
         }; init();
-
-        // If any of the timeperiod links are clicked, update the chartURL and the chart :)
-        model.updateChart = function(company, period){
-            company.chartLink = model.getChartURL(company.scrip, period);
-        };
 
         // Generate ChartURL based on the scrip and the time-period
         // Example of URL - https://chart.finance.yahoo.com/z?s=HINDALCO.NS&t=1y&z=s
@@ -31,6 +23,26 @@
             var chartURLSuffix = "&t=" + period + "&z=s";
             return chartURLPrefix + scrip + chartURLSuffix;
         };
+
+        // If any of the timeperiod links are clicked, update the chartURL and the chart
+        model.updateChart = function(company, period){
+            company.chartURL = model.getChartURL(company.scrip, period);
+        };
+
+        // For each company in the list, this method computes (or recomputes) the chartURL
+        model.rebuildCharts = function(){
+            angular.forEach(model.companyList, function(company){
+                company.chartURL =  model.getChartURL(company.scrip, model.defaultPeriod);
+            });
+        };
+
+        // The user can reset timeperiods on the UI, which should rebuild all charts for that timeperiod
+        $scope.$watch("model.defaultPeriod", function(newValue, oldValue) {
+            if (newValue !== oldValue) {
+                model.rebuildCharts();
+            }
+        });
+
     };
 
     angular.module("portfolioCharts",[]).controller("mainController", [ "$scope", "$http", mainController]);
