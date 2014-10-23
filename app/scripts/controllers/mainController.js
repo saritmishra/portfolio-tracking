@@ -2,7 +2,7 @@
 (function () {
     "use strict";
 
-    var mainController = function ($scope, $http) {
+    var mainController = function ($scope, $http, $window) {
         var model = $scope.model = {};
         model.companyList = [];
         model.defaultPeriod = "1y";
@@ -43,9 +43,12 @@
             }
         });
 
+        model.redirect = function(scrip) {
+            $window.location.href = "http://finance.yahoo.com/echarts?s=" + scrip +  "+Interactive#symbol=RELIANCE.NS;range=5y";
+        };
     };
 
-    angular.module("portfolioCharts",[]).controller("mainController", [ "$scope", "$http", mainController]);
+    angular.module("portfolioCharts",[]).controller("mainController", [ "$scope", "$http", "$window", mainController]);
 
 }());
 
