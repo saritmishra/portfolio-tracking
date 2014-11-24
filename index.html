@@ -3,6 +3,7 @@
 <html lang="en" ng-app="portfolioCharts">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Portfolio Charts</title>
 
@@ -33,9 +34,9 @@
       <img ng-src="{{ company.chartURL }}" alt="">
       <div class="buyPrice">{{ company.buyPrice }}</div>
       <div>
-        <a href="" class="timeLink" ng-click="model.updateChart(company, '5d')">5d</a>
-        <a href="" class="timeLink" ng-click="model.updateChart(company, '3m')">3m</a>
-        <a href="" class="timeLink" ng-click="model.updateChart(company, '1y')">1y</a>
+        <a href="" class="timeLink t1" ng-click="model.updateChart(company, '5d')">5d</a>
+        <a href="" class="timeLink t2" ng-click="model.updateChart(company, '3m')">3m</a>
+        <a href="" class="timeLink t3" ng-click="model.updateChart(company, '1y')">1y</a>
       </div>
     </div>
 

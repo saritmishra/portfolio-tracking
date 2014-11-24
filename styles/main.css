@@ -1,37 +1,44 @@
-.container {
+/*.container {
   width: 1250px;
-}
+}*/
 
 .tile {
-  width: 380px;
-  min-height: 250px;
+  /*width: 380px;*/
+  /*min-height: 250px;*/
+  padding: 1em 1em 2em 1em;
+  max-width: 100%;
   display: inline-block;
   border: 1px solid gray;
-  margin: 5px;
+  margin: 0.5em;
   position: relative;
 }
 
 .buyPrice {
-  width: 95px;
-  margin: 0px auto;
+/*  width: 95px;
+  margin: 0px auto;*/
   position: absolute;
-  top: 50%;
+  bottom: 25%;
   left: 43%;
   color: rgb(92, 92, 92);
-  font-size: 175%;
+  font-size: 1.75em;
 }
 
 img {
-  width: 350px;
-  height: 205px;
+  /*width: 350px;
+  height: 205px;*/
+  max-width: 100%;
   margin: 0px auto;
   display: block;
 }
 
 .timeLink{
-  font-size: 125%;
-  margin-left: 20%;
+  font-size: 1.25em;
+  position: absolute;
+  /*margin-left: 20%;*/
 }
+.t1 { left: 21%;  }
+.t2 { left: 46%;  }
+.t3 { left: 74%;  }
 
 body { padding-top: 70px; }
 
