@@ -1,6 +1,56 @@
 [
     {
         "intent":"track",
+        "scrip":"EBIX",
+        "buyPrice":"10.8"
+    },
+    {
+        "intent":"track",
+        "scrip":"AGX",
+        "buyPrice":"13.8"
+    },
+    {
+        "intent":"track",
+        "scrip":"CSCO",
+        "buyPrice":"20.94"
+    },
+    {
+        "intent":"track",
+        "scrip":"GME",
+        "buyPrice":"37.14"
+    },
+    {
+        "intent":"track",
+        "scrip":"DLX",
+        "buyPrice":"60.17"
+    },
+    {
+        "intent":"track",
+        "scrip":"RGR",
+        "buyPrice":"64.10"
+    },
+    {
+        "intent":"track",
+        "scrip":"PETS",
+        "buyPrice":"13.16"
+    },
+    {
+        "intent":"track",
+        "scrip":"MSFT",
+        "buyPrice":"36.63"
+    },
+    {
+        "intent":"track",
+        "scrip":"COH",
+        "buyPrice":"49.12"
+    },
+    {
+        "intent":"track",
+        "scrip":"NSR",
+        "buyPrice":"33.6"
+    },
+    {
+        "intent":"track",
         "scrip":"CAIRN.NS",
         "buyPrice":"285 -> 340"
     },
