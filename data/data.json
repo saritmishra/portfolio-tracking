@@ -51,6 +51,21 @@
     },
     {
         "intent":"track",
+        "scrip":"KING",
+        "buyPrice":"20"
+    },
+    {
+        "intent":"track",
+        "scrip":"VNQ",
+        "buyPrice":"71"
+    },
+    {
+        "intent":"track",
+        "scrip":"WTW",
+        "buyPrice":"21"
+    },
+    {
+        "intent":"track",
         "scrip":"CAIRN.NS",
         "buyPrice":"285 -> 340"
     },
