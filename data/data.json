@@ -6,8 +6,33 @@
     },
     {
         "intent":"track",
+        "scrip":"COH",
+        "buyPrice":"49.12"
+    },
+    {
+        "intent":"track",
+        "scrip":"BAH",
+        "buyPrice":"22.4"
+    },
+    {
+        "intent":"track",
+        "scrip":"SPRT",
+        "buyPrice":"2.58"
+    },
+    {
+        "intent":"track",
+        "scrip":"TTWO",
+        "buyPrice":"20"
+    },
+    {
+        "intent":"track",
+        "scrip":"KING",
+        "buyPrice":"18"
+    },
+    {
+        "intent":"track",
         "scrip":"AGX",
-        "buyPrice":"13.8"
+        "buyPrice":"36"
     },
     {
         "intent":"track",
@@ -38,11 +63,6 @@
         "intent":"track",
         "scrip":"MSFT",
         "buyPrice":"36.63"
-    },
-    {
-        "intent":"track",
-        "scrip":"COH",
-        "buyPrice":"49.12"
     },
     {
         "intent":"track",
