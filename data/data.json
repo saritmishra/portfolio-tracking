@@ -1,38 +1,18 @@
 [
     {
         "intent":"track",
-        "scrip":"EBIX",
-        "buyPrice":"10.8"
+        "scrip":"DLX",
+        "buyPrice":"60.17"
     },
     {
         "intent":"track",
-        "scrip":"COH",
-        "buyPrice":"49.12"
-    },
-    {
-        "intent":"track",
-        "scrip":"BAH",
-        "buyPrice":"22.4"
-    },
-    {
-        "intent":"track",
-        "scrip":"SPRT",
-        "buyPrice":"2.58"
-    },
-    {
-        "intent":"track",
-        "scrip":"TTWO",
-        "buyPrice":"20"
+        "scrip":"NSR",
+        "buyPrice":"34"
     },
     {
         "intent":"track",
         "scrip":"KING",
         "buyPrice":"18"
-    },
-    {
-        "intent":"track",
-        "scrip":"AGX",
-        "buyPrice":"36"
     },
     {
         "intent":"track",
@@ -46,33 +26,13 @@
     },
     {
         "intent":"track",
-        "scrip":"DLX",
-        "buyPrice":"60.17"
-    },
-    {
-        "intent":"track",
-        "scrip":"RGR",
-        "buyPrice":"64.10"
-    },
-    {
-        "intent":"track",
         "scrip":"PETS",
         "buyPrice":"13.16"
     },
     {
         "intent":"track",
-        "scrip":"MSFT",
-        "buyPrice":"36.63"
-    },
-    {
-        "intent":"track",
-        "scrip":"NSR",
-        "buyPrice":"33.6"
-    },
-    {
-        "intent":"track",
-        "scrip":"KING",
-        "buyPrice":"20"
+        "scrip":"LQDT",
+        "buyPrice":"17"
     },
     {
         "intent":"track",
@@ -83,6 +43,16 @@
         "intent":"track",
         "scrip":"WTW",
         "buyPrice":"21"
+    },
+    {
+        "intent":"track",
+        "scrip":"BKE",
+        "buyPrice":"46"
+    },
+    {
+        "intent":"track",
+        "scrip":"CA",
+        "buyPrice":"29"
     },
     {
         "intent":"track",
