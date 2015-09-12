@@ -1,18 +1,28 @@
 [
     {
-        "intent":"track",
+        "intent":"sell",
+        "scrip":"HLF",
+        "buyPrice":"50.30"
+    },
+    {
+        "intent":"sell",
+        "scrip":"HRB",
+        "buyPrice":"32.4"
+    },
+    {
+        "intent":"sell",
+        "scrip":"NUS",
+        "buyPrice":"41.19"
+    },
+    {
+        "intent":"sell",
         "scrip":"DLX",
-        "buyPrice":"60.17"
+        "buyPrice":"40-60"
     },
     {
-        "intent":"track",
-        "scrip":"NSR",
-        "buyPrice":"34"
-    },
-    {
-        "intent":"track",
-        "scrip":"KING",
-        "buyPrice":"18"
+        "intent":"sell",
+        "scrip":"GME",
+        "buyPrice":"37.05"
     },
     {
         "intent":"track",
@@ -21,8 +31,13 @@
     },
     {
         "intent":"track",
-        "scrip":"GME",
-        "buyPrice":"37.14"
+        "scrip":"NSR",
+        "buyPrice":"33.54"
+    },
+    {
+        "intent":"track",
+        "scrip":"KING",
+        "buyPrice":"19.89"
     },
     {
         "intent":"track",
@@ -53,6 +68,26 @@
         "intent":"track",
         "scrip":"CA",
         "buyPrice":"29"
+    },
+    {
+        "intent":"track",
+        "scrip":"SPOK",
+        "buyPrice":"15"
+    },
+    {
+        "intent":"track",
+        "scrip":"IQNT",
+        "buyPrice":"12.7"
+    },
+    {
+        "intent":"track",
+        "scrip":"UIS",
+        "buyPrice":"23.7"
+    },
+    {
+        "intent":"track",
+        "scrip":"AGX",
+        "buyPrice":"38"
     },
     {
         "intent":"track",
