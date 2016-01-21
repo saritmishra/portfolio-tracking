@@ -9,7 +9,7 @@
 
         // Read JSON file
         var init = function(){
-            $http.get("data/data.json").success(function(jsonData){
+            $http.get("/data").success(function(jsonData){
                     model.companyList = jsonData;
                     // Add chart URLs to each company in the list of companies
                     model.rebuildCharts();
