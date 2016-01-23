@@ -46,6 +46,25 @@
         model.redirect = function(scrip) {
             $window.location.href = "http://finance.yahoo.com/echarts?s=" + scrip +  "+Interactive#symbol=RELIANCE.NS;range=5y";
         };
+
+        model.addScript = function() {
+            var newEntry = {
+                "intent": $scope.scriptToAdd,
+                "scrip": $scope.intentToAdd,
+                "buyPrice": $scope.buyPriceToAdd
+            };
+
+            $http.post('/script', newEntry).then(function(response) {
+                $scope.addStatus = "Success";
+                // on success add the entry to the array manually to save
+                // a roundtrip call to the db
+                model.companyList.push(newEntry);
+                model.rebuildCharts();
+            }, function(response) {
+                $scope.addStatus = "Failed to add entry, refer to console for error";
+                console.log('add - failure', response);
+            });
+        }
     };
 
     angular.module("portfolioCharts",[]).controller("mainController", [ "$scope", "$http", "$window", mainController]);
