@@ -44,7 +44,7 @@
         });
 
         model.redirect = function(scrip) {
-            $window.location.href = "http://finance.yahoo.com/echarts?s=" + scrip +  "+Interactive#symbol=RELIANCE.NS;range=5y";
+            $window.location.href = "http://finance.yahoo.com/echarts?s=" + scrip;
         };
 
         model.addScript = function() {

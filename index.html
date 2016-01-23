@@ -38,6 +38,7 @@
 
     <div class="tile" ng-dblclick="model.redirect(company.scrip)" ng-repeat="company in model.companyList | filter: searchText "> <!-- track by company.scrip -->
       <!-- <img ng-src="{{ model.getChartURL(company.scrip) }}" alt=""> -->
+      <div class="removeTile">X</div>  <!-- Replace with an image later -->
       <img ng-src="{{ company.chartURL }}" alt="">
       <div class="buyPrice">{{ company.buyPrice }}</div>
       <div>

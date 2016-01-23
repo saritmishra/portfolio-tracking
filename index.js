@@ -22,9 +22,9 @@ app.use(function(req,res,next){
     next();
 });
 
- app.get('/filedata', function(request, response) {
-   var readable = fs.createReadStream(path.join(__dirname, 'data/data.json'));
-     readable.pipe(response);
+app.get('/filedata', function(request, response) {
+    var readable = fs.createReadStream(path.join(__dirname, 'data/data.json'));
+    readable.pipe(response);
  });
 
 app.get('/data', function(req, res) {
