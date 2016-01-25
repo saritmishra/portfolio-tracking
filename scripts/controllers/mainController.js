@@ -6,6 +6,7 @@
         var model = $scope.model = {};
         model.companyList = [];
         model.defaultPeriod = "1y";
+        model.addSuccessful=false;
 
         // Read JSON file
         var init = function(){
@@ -36,6 +37,13 @@
             });
         };
 
+        // Delete entry from DB and remove tile when the "X" button is clicked
+        model.removeCompany = function(company){
+            console.log("deleting from the database");
+            //Delete from DB;
+
+        };
+
         // The user can reset timeperiods on the UI, which should rebuild all charts for that timeperiod
         $scope.$watch("model.defaultPeriod", function(newValue, oldValue) {
             if (newValue !== oldValue) {
@@ -47,23 +55,26 @@
             $window.location.href = "http://finance.yahoo.com/echarts?s=" + scrip;
         };
 
-        model.addScript = function() {
-            var newEntry = {
-                "intent": $scope.scriptToAdd,
-                "scrip": $scope.intentToAdd,
-                "buyPrice": $scope.buyPriceToAdd
-            };
+        model.addScript = function(valid) {
+            if (valid) {
+                var newEntry = {
+                    "intent": $scope.symbolToAdd,
+                    "scrip": $scope.intentToAdd,
+                    "buyPrice": $scope.buyPriceToAdd
+                };
 
-            $http.post('/script', newEntry).then(function(response) {
-                $scope.addStatus = "Success";
-                // on success add the entry to the array manually to save
-                // a roundtrip call to the db
-                model.companyList.push(newEntry);
-                model.rebuildCharts();
-            }, function(response) {
-                $scope.addStatus = "Failed to add entry, refer to console for error";
-                console.log('add - failure', response);
-            });
+                $http.post('/script', newEntry).then(function(response) {
+                    model.addSuccessful=true;
+                    // on success add the entry to the array manually to save
+                    // a roundtrip call to the db
+                    model.companyList.push(newEntry);
+                    model.rebuildCharts();
+                }, function(response) {
+                    // $scope.addStatus = "DB error - Failed to add symbol";
+                    model.addSuccessful=false;
+                    console.log('add - failure', response);
+                });
+            }
         }
     };
 

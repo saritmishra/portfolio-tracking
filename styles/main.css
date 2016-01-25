@@ -12,12 +12,31 @@
   margin: 0.5em;
   position: relative;
 }
-
-.removeTile {
+.close {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 18px;
+  color: #000000;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+  text-decoration: none;
   position: absolute;
   padding: 0 3px 0 0;
   right: 0px;
   top: 0px;
+}
+.close:hover {
+  color: #000000;
+  text-decoration: none;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  cursor: pointer;
+}
+
+.alert {
+  text-align: center;
+  margin-top: -20px; /* to reduce the default margin-bottom: 20px that bootstrap adds on navbar */
 }
 
 .buyPrice {
@@ -47,7 +66,7 @@ img {
 .t2 { left: 46%;  }
 .t3 { left: 74%;  }
 
-body { padding-top: 70px; }
+/*body { padding-top: 70px; }*/
 
 .labelAdj {
   margin-top: 5px;

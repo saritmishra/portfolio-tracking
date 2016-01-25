@@ -13,15 +13,10 @@
 
 <body ng-controller="mainController">
 
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <nav class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container-fluid">
-      <form class="navbar-form">
        <input class=" form-control navbar-left" type="text" placeholder="Filter on scrip..." ng-model="searchText" id="searchBar"/>
         <div class="form-group">
-            <input class=" form-control navbar-left" type="text" placeholder="Script to add..." ng-model="scriptToAdd" id="addScript" />
-            <input class=" form-control navbar-left" type="text" placeholder="Intent" ng-model="intentToAdd" id="addScript" />
-            <input class=" form-control navbar-left" type="text" placeholder="Buy Price..." ng-model="buyPriceToAdd" id="addScript" />
-            <button class=" navbar-left btn btn-primary" type="button" id="addButton" ng-click="model.addScript()">Add</button>
         </div>
         <span class="navbar-left" id="addStatus">{{addStatus}}</span>
         <div class="navbar-right">
@@ -38,7 +33,6 @@
 
     <div class="tile" ng-dblclick="model.redirect(company.scrip)" ng-repeat="company in model.companyList | filter: searchText "> <!-- track by company.scrip -->
       <!-- <img ng-src="{{ model.getChartURL(company.scrip) }}" alt=""> -->
-      <div class="removeTile">X</div>  <!-- Replace with an image later -->
       <img ng-src="{{ company.chartURL }}" alt="">
       <div class="buyPrice">{{ company.buyPrice }}</div>
       <div>
