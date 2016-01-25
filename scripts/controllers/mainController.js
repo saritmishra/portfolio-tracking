@@ -6,7 +6,6 @@
         var model = $scope.model = {};
         model.companyList = [];
         model.defaultPeriod = "1y";
-        model.addSuccessful=false;
 
         // Read JSON file
         var init = function(){
