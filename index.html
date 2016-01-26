@@ -53,15 +53,12 @@
   </nav>
 
   <div ng-class="{'alert alert-danger': (addForm.symbolToAdd.$touched && addForm.symbolToAdd.$invalid)
-                  || (!model.addSuccessful && addForm.addButton.$touched)}"
+                  || (!model.addSuccessful && addForm.addButton.$touched), 'alert alert-success': model.addSuccessful }"
       role="alert">
     <span ng-show="addForm.symbolToAdd.$error.minlength && addForm.symbolToAdd.$touched">Stock symbols is too short</span>
     <span ng-show="addForm.symbolToAdd.$error.maxlength && addForm.symbolToAdd.$touched">Stock symbol is too long.</span>
     <span ng-show="addForm.symbolToAdd.$error.required && addForm.symbolToAdd.$touched">Stock symbol is required.</span>
-    <span ng-show="!model.addSuccessful">Unable to add symbol to database.</span>
-  </div>
-
-  <div ng-class="{'alert alert-success': model.addSuccessful}" role="alert">
+    <span ng-show="!model.addSuccessful && addForm.addButton.$touched">Unable to add symbol to database.</span>
     <span ng-show="model.addSuccessful">Symbol added successfully.</span>
   </div>
 
