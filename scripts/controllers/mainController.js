@@ -77,7 +77,7 @@
         }
     };
 
-    angular.module("portfolioCharts",[]).controller("mainController", [ "$scope", "$http", "$window", mainController]);
+    angular.module("portfolioCharts",["mobile-angular-ui"]).controller("mainController", [ "$scope", "$http", "$window", mainController]);
 
 }());
 
