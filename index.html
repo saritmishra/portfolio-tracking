@@ -16,72 +16,98 @@
 </head>
 
 <body ng-controller="mainController">
+  <!-- Sidebars -->
+  <div class="sidebar sidebar-left"><!-- ... -->
+    <div class="scrollable">
+      <h1 class="scrollable-header app-name">Add Stock Symbol</h1>
+      <div class="scrollable-content">
 
-  <nav class="navbar navbar-default navbar-static-top" role="navigation">
-    <div class="container-fluid">
-      <form class="navbar-form" name="addForm" novalidate>
-        <div class="form-group">
-           <input class=" form-control navbar-left" type="text" placeholder="Filter on symbol..." ng-model="searchText" id="searchBar"/>
-        </div>
-        <div class="form-group"
-          ng-class="{'has-error': addForm.symbolToAdd.$touched && addForm.symbolToAdd.$invalid }">
-            <input class="form-control navbar-left" type="text" placeholder="Stock symbol to add..."
-              name="symbolToAdd"
-              ng-model="symbolToAdd"
-              ng-minlength="1"
-              ng-maxlength="5"
-              required/>
-        </div>
-        <div class="form-group">
-            <input class="form-control navbar-left" type="number" placeholder="Buy Price..."
-              ng-model="buyPriceToAdd"
-              name="buyPriceToAdd"/>
-        </div>
-        <div class="form-group">
-            <input class=" form-control navbar-left" type="text" placeholder="Intent" ng-model="intentToAdd"  />
-        </div>
-        <div class="form-group">
-          <button class=" navbar-left btn btn-primary" type="button" name="addButton" id="addButton"
-            ng-click="model.addScript(addForm.symbolToAdd.$valid && addForm.buyPriceToAdd.$valid)">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-          </button>
-        </div>
-        <div class="navbar-right">
-          <label class="navbar-text labelAdj">Reset all timeperiods to</label>
-          <input type="radio" name="period" value="5d" ng-click="model.defaultPeriod='5d'"/>5d
-          <input type="radio" name="period" value="3m" ng-click="model.defaultPeriod='3m'"/>3m
-          <input type="radio" name="period" value="1y" ng-click="model.defaultPeriod='1y'" checked=true/>1y
-        </div>
-      </form>
+        <form name="addForm" novalidate>
+          <div class="form-group "
+            ng-class="{'has-error': addForm.symbolToAdd.$touched && addForm.symbolToAdd.$invalid }">
+              <input class="form-control navbar-left" type="text" placeholder="Stock symbol to add..."
+                name="symbolToAdd"
+                ng-model="symbolToAdd"
+                ng-minlength="1"
+                ng-maxlength="5"
+                required/>
+          </div>
+          <div class="form-group">
+              <input class="form-control navbar-left" type="number" placeholder="Buy Price..."
+                ng-model="buyPriceToAdd"
+                name="buyPriceToAdd"/>
+          </div>
+          <div class="form-group">
+              <input class=" form-control navbar-left" type="text" placeholder="Intent" ng-model="intentToAdd"  />
+          </div>
+          <div class="form-group">
+            <button class=" navbar-left btn btn-primary" type="button" name="addButton" id="addButton"
+              ng-click="model.addScript(addForm.symbolToAdd.$valid && addForm.buyPriceToAdd.$valid)">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+          </div>
+        </form>
+
+      </div>
     </div>
-  </nav>
-
-  <div ng-class="{'alert alert-danger': (addForm.symbolToAdd.$touched && addForm.symbolToAdd.$invalid)
-                  || (!model.addSuccessful && addForm.addButton.$touched), 'alert alert-success': model.addSuccessful }"
-      role="alert">
-    <span ng-show="addForm.symbolToAdd.$error.minlength && addForm.symbolToAdd.$touched">Stock symbols is too short</span>
-    <span ng-show="addForm.symbolToAdd.$error.maxlength && addForm.symbolToAdd.$touched">Stock symbol is too long.</span>
-    <span ng-show="addForm.symbolToAdd.$error.required && addForm.symbolToAdd.$touched">Stock symbol is required.</span>
-    <span ng-show="!model.addSuccessful && addForm.addButton.$touched">Unable to add symbol to database.</span>
-    <span ng-show="model.addSuccessful">Symbol added successfully.</span>
   </div>
+  <!--<div class="sidebar sidebar-right"> </div> -->
 
+<div class="app">
+  <!-- <nav class="navbar navbar-default navbar-static-top" role="navigation"> -->
+  <div class="navbar navbar-app navbar-absolute-top"><!-- Top Navbar -->
+    <div class="navbar-brand navbar-brand-center">
+      <a href ui-toggle='uiSidebarLeft'>+</a>
+    </div>
 
-  <div class="container-fluid">
-
-    <div class="tile" ng-dblclick="model.redirect(company.scrip)" ng-repeat="company in model.companyList | filter: searchText "> <!-- track by company.scrip -->
-      <!-- <img ng-src="{{ model.getChartURL(company.scrip) }}" alt=""> -->
-      <a class="close" ng-click="model.removeCompany(company)">×</a>
-      <img ng-src="{{ company.chartURL }}" alt="">
-      <div class="buyPrice">{{ company.buyPrice }}</div>
-      <div>
-        <a href="" class="timeLink t1" ng-click="model.updateChart(company, '5d')">5d</a>
-        <a href="" class="timeLink t2" ng-click="model.updateChart(company, '3m')">3m</a>
-        <a href="" class="timeLink t3" ng-click="model.updateChart(company, '1y')">1y</a>
+    <div class="pull-left">
+      <div class="margin10">
+           <input class="form-control " type="text" placeholder="Search..." ng-model="searchText" id="searchBar"/>
       </div>
     </div>
 
-  </div>
+    <div class="pull-right">
+      <div class="margin10">
+          <label class="labelAdj">Timeperiods:</label>
+          <input type="radio" name="period" value="5d" ng-click="model.defaultPeriod='5d'"/>5d
+          <input type="radio" name="period" value="3m" ng-click="model.defaultPeriod='3m'"/>3m
+          <input type="radio" name="period" value="1y" ng-click="model.defaultPeriod='1y'" checked=true/>1y
+      </div>
+    </div>
+
+  </div><!-- </nav> --> <!-- Top Navbar -->
+
+  <div class='app-body'>
+    <div class='app-content'>
+
+<!-- V A L I D A T I O N S -->
+      <div ng-class="{'alert alert-danger': (addForm.symbolToAdd.$touched && addForm.symbolToAdd.$invalid)
+                      || (!model.addSuccessful && addForm.addButton.$touched), 'alert alert-success': model.addSuccessful }"
+          role="alert">
+        <span ng-show="addForm.symbolToAdd.$error.minlength && addForm.symbolToAdd.$touched">Stock symbols is too short</span>
+        <span ng-show="addForm.symbolToAdd.$error.maxlength && addForm.symbolToAdd.$touched">Stock symbol is too long.</span>
+        <span ng-show="addForm.symbolToAdd.$error.required && addForm.symbolToAdd.$touched">Stock symbol is required.</span>
+        <span ng-show="!model.addSuccessful && addForm.addButton.$touched">Unable to add symbol to database.</span>
+        <span ng-show="model.addSuccessful">Symbol added successfully.</span>
+      </div>
+
+<!-- C O M P A N Y   T I L E S -->
+
+      <div class="tile" ng-dblclick="model.redirect(company.scrip)" ng-repeat="company in model.companyList | filter: searchText "> <!-- track by company.scrip -->
+        <!-- <img ng-src="{{ model.getChartURL(company.scrip) }}" alt=""> -->
+        <a class="close" ng-click="model.removeCompany(company)">×</a>
+        <img ng-src="{{ company.chartURL }}" alt="">
+        <div class="buyPrice">{{ company.buyPrice }}</div>
+        <div>
+          <a href="" class="timeLink t1" ng-click="model.updateChart(company, '5d')">5d</a>
+          <a href="" class="timeLink t2" ng-click="model.updateChart(company, '3m')">3m</a>
+          <a href="" class="timeLink t3" ng-click="model.updateChart(company, '1y')">1y</a>
+        </div>
+      </div>
+
+    </div><!-- app-content -->
+  </div><!-- app-body -->
+</div> <!-- div app -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <!-- <script src="mobile-angular-ui-1.2.0-rc.3/dist/angular.min.js"></script> -->

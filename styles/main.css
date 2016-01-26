@@ -26,6 +26,11 @@
   right: 0px;
   top: 0px;
 }
+
+.margin10{
+  margin: 10px;
+}
+
 .close:hover {
   color: #000000;
   text-decoration: none;
@@ -78,5 +83,5 @@ input[type=radio] {
 }
 
 #searchBar {
-  width: 360px;
+  /*width: 60%;*/
 }
