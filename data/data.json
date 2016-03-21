@@ -1,68 +1,8 @@
 [
     {
-        "intent":"sell",
-        "scrip":"HLF",
-        "buyPrice":"50.30"
-    },
-    {
-        "intent":"sell",
-        "scrip":"HRB",
-        "buyPrice":"32.4"
-    },
-    {
-        "intent":"sell",
-        "scrip":"NUS",
-        "buyPrice":"41.19"
-    },
-    {
-        "intent":"sell",
-        "scrip":"DLX",
-        "buyPrice":"40-60"
-    },
-    {
-        "intent":"sell",
-        "scrip":"GME",
-        "buyPrice":"37.05"
-    },
-    {
-        "intent":"track",
-        "scrip":"CSCO",
-        "buyPrice":"20.94"
-    },
-    {
-        "intent":"track",
-        "scrip":"NSR",
-        "buyPrice":"33.54"
-    },
-    {
-        "intent":"track",
-        "scrip":"KING",
-        "buyPrice":"19.89"
-    },
-    {
-        "intent":"track",
-        "scrip":"PETS",
-        "buyPrice":"13.16"
-    },
-    {
         "intent":"track",
         "scrip":"LQDT",
-        "buyPrice":"17"
-    },
-    {
-        "intent":"track",
-        "scrip":"VNQ",
-        "buyPrice":"71"
-    },
-    {
-        "intent":"track",
-        "scrip":"WTW",
-        "buyPrice":"21"
-    },
-    {
-        "intent":"track",
-        "scrip":"BKE",
-        "buyPrice":"46"
+        "buyPrice":"17.38"
     },
     {
         "intent":"track",
@@ -71,23 +11,53 @@
     },
     {
         "intent":"track",
-        "scrip":"SPOK",
-        "buyPrice":"15"
+        "scrip":"GORO",
+        "buyPrice":"3"
+    },
+    {
+        "intent":"track",
+        "scrip":"CSCO",
+        "buyPrice":"18-20"
+    },
+    {
+        "intent":"track",
+        "scrip":"PETS",
+        "buyPrice":"13.13"
+    },
+    {
+        "intent":"track",
+        "scrip":"BKE",
+        "buyPrice":"46.5"
     },
     {
         "intent":"track",
         "scrip":"IQNT",
-        "buyPrice":"12.7"
-    },
-    {
-        "intent":"track",
-        "scrip":"UIS",
-        "buyPrice":"23.7"
+        "buyPrice":"13"
     },
     {
         "intent":"track",
         "scrip":"AGX",
-        "buyPrice":"38"
+        "buyPrice":"33 38"
+    },
+    {
+        "intent":"track",
+        "scrip":"RPXC",
+        "buyPrice":"14"
+    },
+    {
+        "intent":"track",
+        "scrip":"VEC",
+        "buyPrice":"28"
+    },
+    {
+        "intent":"track",
+        "scrip":"VIAB",
+        "buyPrice":"70"
+    },
+    {
+        "intent":"track",
+        "scrip":"FLR",
+        "buyPrice":"54"
     },
     {
         "intent":"track",
